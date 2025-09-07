@@ -18,6 +18,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.lihan.minichallenges2025july.ui.theme.MiniChallenges2025JulyTheme
+import com.lihan.minichallenges2025july.ui.theme.Surface30
+import com.lihan.minichallenges2025july.ui.theme.Surface50
 
 @Composable
 fun EmojiBar(

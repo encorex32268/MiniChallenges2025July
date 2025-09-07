@@ -9,31 +9,22 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.lihan.minichallenges2025july.fonts.urbanist
+import com.lihan.minichallenges2025july.ui.theme.*
 import com.lihan.minichallenges2025july.ui.theme.MiniChallenges2025JulyTheme
-
-val BackgroundGradient = Brush.linearGradient(colors = listOf(Color(0xFF06060A) , Color(0xFF0F1318)))
-val Surface30 = Color(0xFF1F222A).copy(alpha = 0.3f)
-val Surface50 = Color(0xFF1F222A).copy(alpha = 0.5f)
-val OnSurface = Color.White
-val Blue12 = Color(0xFF68C3FF).copy(alpha = 0.12f)
 
 
 @Composable
@@ -44,7 +35,7 @@ fun EmojiReactionBubbleScreen(
 ) {
 
     Column(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize().background(brush = BackgroundGradient),
         verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ){

@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.lihan.minichallenges2025july.fonts.urbanist
 import com.lihan.minichallenges2025july.ui.theme.MiniChallenges2025JulyTheme
+import com.lihan.minichallenges2025july.ui.theme.OnSurface
 
 @Composable
 fun Emoji(
