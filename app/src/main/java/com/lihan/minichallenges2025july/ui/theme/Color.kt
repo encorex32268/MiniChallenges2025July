@@ -17,6 +17,7 @@ val BackgroundGradient = Brush.linearGradient(colors = listOf(Color(0xFF06060A) 
 val Surface30 = Color(0xFF1F222A).copy(alpha = 0.3f)
 val Surface50 = Color(0xFF1F222A).copy(alpha = 0.5f)
 val OnSurface = Color.White
+val Blue = Color(0xFF68C3FF)
 val Blue12 = Color(0xFF68C3FF).copy(alpha = 0.12f)
 
 val OnSurfaceVar = Color(0xFF7F8491)
@@ -26,3 +27,5 @@ val OnSurfaceAlt30 = Color.White.copy(alpha = 0.3f)
 val OnSurfaceAlt15 = Color.White.copy(alpha = 0.15f)
 val Error = Color(0xFFF83468)
 val Primary = Color(0xFF75FABF)
+
+

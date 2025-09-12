@@ -28,32 +28,9 @@ import com.lihan.minichallenges2025july.R
 import com.lihan.minichallenges2025july.fonts.urbanist
 import com.lihan.minichallenges2025july.ui.theme.MiniChallenges2025JulyTheme
 import com.lihan.minichallenges2025july.ui.theme.OnSurfaceAlt
+import com.lihan.minichallenges2025july.ui.theme.OnSurfaceVar
 import com.lihan.minichallenges2025july.ui.theme.Primary
-
-
-@Composable
-fun CustomStatusButton(
-    text: String,
-    onClick: () -> Unit,
-    isRead: Boolean = false,
-    leadingIcon: @Composable (() -> Unit)?=null,
-    modifier: Modifier = Modifier
-) {
-    if (isRead){
-        CustomOutlineButton(
-            modifier = modifier,
-            onClick = onClick,
-            text = text,
-            leadingIcon = leadingIcon)
-    }else{
-        CustomButton(
-            modifier = modifier,
-            onClick = onClick,
-            text = text,
-            leadingIcon = leadingIcon
-        )
-    }
-}
+import com.lihan.minichallenges2025july.ui.theme.Surface50
 
 
 @Composable
@@ -68,8 +45,8 @@ fun CustomButton(
         lineHeight = 24.sp
     ),
     modifier: Modifier = Modifier,
+) {
 
-    ) {
     Button(
         modifier = modifier.widthIn(min = 240.dp),
         onClick = onClick,
@@ -96,6 +73,7 @@ fun CustomButton(
 fun CustomOutlineButton(
     onClick: () -> Unit,
     text: String,
+    isSelected: Boolean = false,
     leadingIcon: @Composable (() -> Unit)?=null,
     textStyle: TextStyle = TextStyle(
         fontFamily = urbanist,
@@ -109,9 +87,10 @@ fun CustomOutlineButton(
         modifier = modifier.widthIn(min = 240.dp),
         onClick = onClick,
         colors = ButtonDefaults.outlinedButtonColors(
-            contentColor = Primary
+            containerColor = Surface50,
+            contentColor = if (isSelected) OnSurfaceVar else Primary
         ),
-        border = BorderStroke(1.dp,Primary),
+        border = BorderStroke(1.dp, if (isSelected) OnSurfaceVar else Primary),
         shape = RoundedCornerShape(0.dp)
     ) {
         Row(
@@ -159,6 +138,18 @@ fun CustomOutlineButtonPreview() {
                 text = "Text"
             )
             CustomOutlineButton(
+                onClick = {},
+                text = "Text",
+                leadingIcon = {
+                    Icon(
+                        imageVector = ImageVector.vectorResource(R.drawable.phone),
+                        contentDescription = "Phone"
+                    )
+                }
+            )
+
+            CustomOutlineButton(
+                isSelected = true,
                 onClick = {},
                 text = "Text",
                 leadingIcon = {

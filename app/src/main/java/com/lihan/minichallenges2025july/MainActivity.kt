@@ -5,11 +5,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.lihan.minichallenges2025july.bottomnavigationwithunreadbadges.BottomNavigationWithUnreadBadge
 import com.lihan.minichallenges2025july.bottomnavigationwithunreadbadges.BottomNavigationWithUnreadBadgeState
 import com.lihan.minichallenges2025july.bottomnavigationwithunreadbadges.BottomNavigationWithUnreadBadgeViewModel
+import com.lihan.minichallenges2025july.messagecard.MessageCardScreen
+import com.lihan.minichallenges2025july.messagecard.MessageCardViewModel
 import com.lihan.minichallenges2025july.ui.theme.MiniChallenges2025JulyTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,13 +23,17 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MiniChallenges2025JulyTheme {
-                val viewModel by viewModels<BottomNavigationWithUnreadBadgeViewModel>()
+                val viewModel by viewModels<MessageCardViewModel>()
                 val state by viewModel.state.collectAsStateWithLifecycle()
 
-                BottomNavigationWithUnreadBadge(
-                    state = state,
-                    onAction = viewModel::onAction
-                )
+                Scaffold {
+                    MessageCardScreen(
+                        modifier = Modifier.padding(it),
+                        state = state,
+                        onAction = viewModel::onAction
+                    )
+
+                }
             }
         }
     }
