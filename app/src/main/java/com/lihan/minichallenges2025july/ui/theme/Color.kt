@@ -23,8 +23,8 @@ val Blue12 = Color(0xFF68C3FF).copy(alpha = 0.12f)
 val OnSurfaceVar = Color(0xFF7F8491)
 val SurfaceAlt = Color.White
 val OnSurfaceAlt = Color(0xFF0F0F18)
-val OnSurfaceAlt30 = Color.White.copy(alpha = 0.3f)
-val OnSurfaceAlt15 = Color.White.copy(alpha = 0.15f)
+val SurfaceAlt30 = Color.White.copy(alpha = 0.3f)
+val SurfaceAlt15 = Color.White.copy(alpha = 0.15f)
 val Error = Color(0xFFF83468)
 val Primary = Color(0xFF75FABF)
 

@@ -5,14 +5,18 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.lihan.minichallenges2025july.bottomnavigationwithunreadbadges.BottomNavigationWithUnreadBadge
 import com.lihan.minichallenges2025july.bottomnavigationwithunreadbadges.BottomNavigationWithUnreadBadgeState
 import com.lihan.minichallenges2025july.bottomnavigationwithunreadbadges.BottomNavigationWithUnreadBadgeViewModel
+import com.lihan.minichallenges2025july.emojicomposer.EmojiComposerScreen
+import com.lihan.minichallenges2025july.emojicomposer.EmojiComposerViewModel
 import com.lihan.minichallenges2025july.messagecard.MessageCardScreen
 import com.lihan.minichallenges2025july.messagecard.MessageCardViewModel
 import com.lihan.minichallenges2025july.ui.theme.MiniChallenges2025JulyTheme
@@ -23,11 +27,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MiniChallenges2025JulyTheme {
-                val viewModel by viewModels<MessageCardViewModel>()
+                val viewModel by viewModels<EmojiComposerViewModel>()
                 val state by viewModel.state.collectAsStateWithLifecycle()
-
                 Scaffold {
-                    MessageCardScreen(
+                    EmojiComposerScreen(
                         modifier = Modifier.padding(it),
                         state = state,
                         onAction = viewModel::onAction

@@ -23,6 +23,7 @@ import com.lihan.minichallenges2025july.ui.theme.Surface50
 
 @Composable
 fun EmojiBar(
+    emojiTypes: List<EmojiType> = EmojiType.entries,
     onEmojiClick: (EmojiType) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -34,7 +35,7 @@ fun EmojiBar(
         ,
         horizontalArrangement = Arrangement.SpaceEvenly
     ){
-        EmojiType.entries.forEach { emojiType ->
+        emojiTypes.forEach { emojiType ->
             Emoji(
                 modifier = Modifier.padding(4.dp),
                 emojiType = emojiType,
@@ -46,6 +47,9 @@ fun EmojiBar(
 
 
 }
+
+
+
 
 @Preview(showBackground = true)
 @PreviewLightDark
