@@ -28,4 +28,5 @@ val SurfaceAlt15 = Color.White.copy(alpha = 0.15f)
 val Error = Color(0xFFF83468)
 val Primary = Color(0xFF75FABF)
 
-
+val Yellow = Color(0xFFFFC368)
+val Yellow12 = Color(0xFFFFC368).copy(alpha = 0.12f)
