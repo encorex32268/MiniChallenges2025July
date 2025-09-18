@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -48,7 +50,7 @@ fun UserInfoHeader(
             modifier = Modifier
                 .clip(CircleShape)
                 .background(color = iconBackgroundColor)
-                .size(36.dp),
+                .size(28.dp),
             contentAlignment = Alignment.Center
         ){
             Text(
@@ -95,6 +97,7 @@ fun UserInfoHeader(
                 )
             }
             if (badge.isNotEmpty()){
+                Spacer(Modifier.height(2.dp))
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(6.dp))
@@ -122,7 +125,7 @@ fun UserInfoHeader(
 
 }
 
-@Preview
+@Preview(showBackground = false, backgroundColor = 0xFF000000)
 @Composable
 private fun UserInfoHeaderPreview() {
     MiniChallenges2025JulyTheme {
@@ -131,7 +134,8 @@ private fun UserInfoHeaderPreview() {
             name = user.username,
             time = user.time,
             badge = user.channel,
-            badgeColor = Surface50
+            badgeColor = Surface50,
+            badgeTextColor = OnSurfaceVar
         )
     }
 
